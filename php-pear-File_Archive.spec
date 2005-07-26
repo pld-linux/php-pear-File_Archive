@@ -19,6 +19,9 @@ Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# first two are bogus, last were reported as a bug
+%define		_noautoreq	'pear(File/Archive/Reader/Cab.php)' 'pear(File/Archive/Reader/Rar.php)' 'pear(File/Archive/Reader/Cache.php)' 'pear(File/Archive/Writer/AddFolder.php)'
+
 %description
 This library is strongly object oriented. It makes it very easy to
 use, writing simple code, yet the library is very powerfull.
