@@ -7,20 +7,20 @@
 Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
 Summary(pl):	%{_pearname} - ³atwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
-Version:	1.5.1
+Version:	1.5.2
 Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	522de8e9d87e78ccc7320fa2830434f1
+# Source0-md5:	7fb31146c253e1d2649fdbc76325ff08
 URL:		http://pear.php.net/package/File_Archive/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# first two are bogus, last were reported as a bug
-%define		_noautoreq	'pear(File/Archive/Reader/Cab.php)' 'pear(File/Archive/Reader/Rar.php)' 'pear(File/Archive/Reader/Cache.php)' 'pear(File/Archive/Writer/AddFolder.php)'
+# bogus
+%define		_noautoreq	'pear(File/Archive/Reader/Cab.php)' 'pear(File/Archive/Reader/Rar.php)''
 
 %description
 This library is strongly object oriented. It makes it very easy to
