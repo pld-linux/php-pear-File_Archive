@@ -8,19 +8,20 @@ Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
 Summary(pl):	%{_pearname} - ³atwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
 Version:	1.5.3
-Release:	1
+Release:	1.1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	49ebbc8a341d189b7d0be90064a3d18d
+Patch0:		%{_pearname}-noimpl.patch
 URL:		http://pear.php.net/package/File_Archive/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# bogus
-%define		_noautoreq	'pear(File/Archive/Reader/Cab.php)' 'pear(File/Archive/Reader/Rar.php)''
+# exclude optional dependencies
+%define		_noautoreq	'pear(Mail/Mime.*)' 'pear(Mail.*)' 'pear(Cache/Lite.*)'
 
 %description
 This library is strongly object oriented. It makes it very easy to
@@ -48,24 +49,44 @@ archiwów tar, gz, zip b±d¼ bzip2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoReq:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
+%pear_package_setup
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/{Predicate,Reader,Writer}
-
-install %{_pearname}-%{version}/%{_class}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
-install %{_pearname}-%{version}/%{_class}/%{_subclass}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}
-install %{_pearname}-%{version}/%{_class}/%{_subclass}/Predicate/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Predicate
-install %{_pearname}-%{version}/%{_class}/%{_subclass}/Reader/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Reader
-install %{_pearname}-%{version}/%{_class}/%{_subclass}/Writer/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Writer
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
+
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/%{_class}/{doc,tests}
+%doc install.log
+%doc docs/%{_pearname}/%{_class}/doc/*
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
