@@ -1,0 +1,25 @@
+--- ./usr/share/pear/File/Archive.php~	2005-10-03 16:12:43.000000000 +0300
++++ ./usr/share/pear/File/Archive.php	2005-10-03 16:14:29.000000000 +0300
+@@ -681,15 +681,6 @@
+             require_once 'File/Archive/Reader/Ar.php';
+             return new File_Archive_Reader_Ar($source, $sourceOpened);
+ 
+-/*        case 'cab':
+-            require_once 'File/Archive/Reader/Cab.php';
+-            return new File_Archive_Reader_Cab($source, $sourceOpened);
+-
+-
+-        case 'rar':
+-            require_once "File/Archive/Reader/Rar.php";
+-            return new File_Archive_Reader_Rar($source, $sourceOpened); */
+-
+         default:
+             return false;
+         }
+@@ -1400,4 +1391,4 @@
+     }
+ }
+ 
+-?>
+\ No newline at end of file
++?>
