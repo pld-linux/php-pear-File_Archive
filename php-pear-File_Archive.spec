@@ -9,6 +9,7 @@ Summary(pl):	%{_pearname} - ³atwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
 Version:	1.5.3
 Release:	1.1
+Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
