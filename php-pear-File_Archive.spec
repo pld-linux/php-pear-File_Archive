@@ -17,7 +17,9 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 Patch0:		%{_pearname}-noimpl.patch
 URL:		http://pear.php.net/package/File_Archive/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
+Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
+Requires:	php-pear-MIME_Type
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
