@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
-Summary(pl):	%{_pearname} - ≥atwa obrÛbka plikÛw tar, gz, bz2 i zip
+Summary(pl.UTF-8):   %{_pearname} - ≈Çatwa obr√≥bka plik√≥w tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
 Version:	1.5.3
 Release:	1.1
@@ -41,22 +41,22 @@ tar, gz, zip, bzip2 archives.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Ta biblioteka jest silnie zorientowana obiektowo. DziÍki temu jest
-≥atwa w uøycia, pozwala na pisanie prostego kodu, przy czym ma duøe
-moøliwo∂ci.
+%description -l pl.UTF-8
+Ta biblioteka jest silnie zorientowana obiektowo. Dziƒôki temu jest
+≈Çatwa w u≈ºycia, pozwala na pisanie prostego kodu, przy czym ma du≈ºe
+mo≈ºliwo≈õci.
 
-File_Archive sk≥ada siÍ z dwÛch obiektÛw: reader i writer. Odczyt
-moøliwy jest z pliku, katalogu i archiwÛw tar, gz, zip i bzip2.
+File_Archive sk≈Çada siƒô z dw√≥ch obiekt√≥w: reader i writer. Odczyt
+mo≈ºliwy jest z pliku, katalogu i archiw√≥w tar, gz, zip i bzip2.
 
-Zapis moøliwy jest do pliku(Ûw), jako za≥±cznik do listu lub do
-archiwÛw tar, gz, zip b±dº bzip2.
+Zapis mo≈ºliwy jest do pliku(√≥w), jako za≈ÇƒÖcznik do listu lub do
+archiw√≥w tar, gz, zip bƒÖd≈∫ bzip2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -65,7 +65,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
