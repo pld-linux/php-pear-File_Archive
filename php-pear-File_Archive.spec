@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
-Summary(pl.UTF-8):   %{_pearname} - łatwa obróbka plików tar, gz, bz2 i zip
+Summary(pl.UTF-8):	%{_pearname} - łatwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
 Version:	1.5.3
 Release:	1.1
@@ -56,7 +56,7 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
