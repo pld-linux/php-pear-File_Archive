@@ -3,12 +3,11 @@
 %define		_subclass	Archive
 %define		_status		stable
 %define		_pearname	%{_class}_%{_subclass}
-
 Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
 Summary(pl.UTF-8):	%{_pearname} - łatwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
 Version:	1.5.3
-Release:	1.1
+Release:	2
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
