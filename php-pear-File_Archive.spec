@@ -6,13 +6,13 @@
 Summary:	%{_pearname} - manipulate easily the tar, gz, bz2 and zip files
 Summary(pl.UTF-8):	%{_pearname} - łatwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{_pearname}
-Version:	1.5.3
-Release:	3
+Version:	1.5.4
+Release:	1
 Epoch:		0
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	49ebbc8a341d189b7d0be90064a3d18d
+# Source0-md5:	5bbdacfd95e00a9be46fed4b5eb88378
 Patch0:		%{_pearname}-noimpl.patch
 URL:		http://pear.php.net/package/File_Archive/
 BuildRequires:	php-pear-PEAR
@@ -86,8 +86,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc install.log
-%doc docs/%{_pearname}/%{_class}/doc/*
+%doc install.log docs/%{_pearname}/doc/*
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}
