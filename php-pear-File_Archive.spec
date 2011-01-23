@@ -27,6 +27,7 @@ Requires:	php-zlib
 Suggests:	php-pear-Cache_Lite
 Suggests:	php-pear-Mail
 Suggests:	php-pear-Mail_Mime
+Obsoletes:	php-pear-File_Archive-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,20 +60,6 @@ archiwów tar, gz, zip bądź bzip2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
 %patch0 -p1
@@ -96,7 +83,3 @@ fi
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
