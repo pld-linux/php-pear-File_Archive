@@ -1,6 +1,5 @@
 %define		status		stable
 %define		pearname	File_Archive
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - manipulate easily the tar, gz, bz2 and zip files
 Summary(pl.UTF-8):	%{pearname} - łatwa obróbka plików tar, gz, bz2 i zip
 Name:		php-pear-%{pearname}
